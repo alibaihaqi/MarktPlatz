@@ -8,19 +8,59 @@
     <title>Document</title>
   </head>
 
-  <body>
+  <body style="margin: 20px">
     <h1>MarktPlatz</h1>
     <br><br>
 
     <ul>
-      <li><a href="/">Home</a> </li>
-      <li> <a href="/company/logout">Log Out</a> </li>
-    </ul>
+        <li><a href="/company"><%= company.name %></a> </li>
+        <li>
+          <select>
+              <option selected>--- Settings ---</option>
+              <option><a href="/company/edit-profile">Edit Profile</a></option>
+              <option><a href="/company/change-password">Change Password</a></option>
+              <option><a href="/company/logout">Log Out</a></option>
+          </select>
+        </li>
+      </ul>
 
     <ul>
       <li><a href="/about_us">About Us</a></li>
       <li> <a href="/list_companies">List Companies</a> </li>
     </ul>
+
+      <h4>---------------------------------------------------------------------------------------------------------------------------------------</h4>
+      <h3>Your Profile</h3>
+      <table style="text-align: left">
+              <tr>
+                <th>Name:</th>
+          <td><%= company.name %></td>
+        </tr>
+        <tr>
+          <th>About Our Company:</th>
+          <td><%= company.about_me %></td>
+        </tr>
+        <tr>
+            <th>Address:</th>
+            <td><%= company.address %></td>
+        </tr>
+        <tr>
+          <th>City:</th>
+          <td><%= company.city %></td>
+        </tr>
+        <tr>
+            <th>Province:</th>
+            <td><%= company.province %></td>
+        </tr>
+        <tr>
+            <th>Cateogry:</th>
+            <td><%= company.category %></td>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <td><%= company.email %></td>
+        </tr>
+      </table>
   </body>
 
 </html>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>Document</title>
   </head>
 
@@ -21,6 +22,21 @@
         <li><a href="/about_us">About Us</a></li>
         <li> <a href="/list_companies">List Companies</a> </li>
       </ul>
+
+      <h2 style="color: royalblue">Sign In</h2>
+      <h3><%= message %></h3>
+      <form action="/users/login" method="POST">
+          Email:<br>
+          <input type="text" name="email" value="<%= user.email %>">
+          <br>
+          Password:<br>
+          <input type="password" name="password" value="<%= user.password %>">
+          <br><br>
+          <input type="submit" value="Submit">
+        </form> 
+        <br><br>
+        <h4>don't have an account?</h4>
+        <h4><a href="/users/register">Sign Up</a></h4>
   </body>
 
 </html>

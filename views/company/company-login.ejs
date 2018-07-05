@@ -7,18 +7,33 @@
     <title>Document</title>
   </head>
   
-  <body>
-      <h1>MarktPlatz</h1>
+  <body style="text-align: center">
+    <h1>MarktPlatz</h1>
+    <br><br>
+
+    <ul>
+      <li><a href="/">Home</a> </li>
+      <li> <a href="/company/register">Sign Up</a> </li>
+    </ul>
+
+    <ul>
+      <li><a href="/about_us">About Us</a></li>
+      <li> <a href="/list_companies">List Companies</a> </li>
+    </ul>
+    
+    <h2 style="color: royalblue">Sign In</h2>
+    <h3><%= message %></h3>
+    <form action="/company/login" method="POST">
+        Email:<br>
+        <input type="text" name="email" value="<%= company.email %>">
+        <br>
+        Password:<br>
+        <input type="password" name="password" value="<%= company.password %>">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
       <br><br>
-  
-      <ul>
-        <li><a href="/">Home</a> </li>
-        <li> <a href="/company/register">Sign Up</a> </li>
-      </ul>
-  
-      <ul>
-        <li><a href="/about_us">About Us</a></li>
-        <li> <a href="/list_companies">List Companies</a> </li>
-      </ul>
+      <h4>don't have an account?</h4>
+      <h3><a href="/company/register">Sign Up</a></h3>
   </body>
 </html>

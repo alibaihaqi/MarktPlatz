@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+
+  <body style="text-align: center">
+    <h2 style="color: royalblue">Edit Your Profile</h2>
+    <h4><%= message %></h4>
+    <form action="/users/edit-profile" method="POST">
+        First Name:<br>
+        <input type="text" name="first_name" value="<%= user[0].first_name %>">
+        <br>
+        Last Name:<br>
+        <input type="text" name="last_name" value="<%= user[0].last_name %>">
+        <br>
+        Birth Date:<br>
+        <input type="text" name="birthdate" value="<%= user[0].birthdate%>">
+        <br>
+        Address:<br>
+        <input type="text" name="address" value="<%= user[0].address %>">
+        <br>
+        City:<br>
+        <input type="text" name="city" value="<%= user[0].city %>">
+        <br>
+        Province:<br>
+        <input type="text" name="province" value="<%= user[0].province %>">
+        <br>
+        Email:<br>
+        <input type="text" name="email" value="<%= user[0].email %>">
+        <br>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+      
+      <br><br>
+  </body>
+
+</html>
