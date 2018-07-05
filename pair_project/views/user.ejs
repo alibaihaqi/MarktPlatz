@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Marktplatz</title>
+</head>
+<body style="margin: 20px">
+    <h2 >Marktplatz</h2><br>
+    <ul>
+        <li><a href="/user"><%= user.first_name %>  <%= user.last_name %></a></li>
+        <li><a href="/user/logout">logout</a></li>
+    </ul>
+    <h4>---------------------------------------------------------------------------------------------------------------------------------------</h4>
+    <h3>Your Profile</h3>
+    <table style="text-align: left">
+            <tr>
+              <th>Name:</th>
+              <td><%= user.first_name %>  <%= user.last_name %></td>
+            </tr>
+            <tr>
+              <th>Address:</th>
+              <td><%= user.address %></td>
+            </tr>
+            <tr>
+                <th>Birth Date:</th>
+                <td><%= user.birthdate %></td>
+            </tr>
+            <tr>
+              <th>City:</th>
+              <td><%= user.city %></td>
+            </tr>
+            <tr>
+                <th>Province:</th>
+                <td><%= user.province %></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td><%= user.email %></td>
+            </tr>
+          </table>
+          <h3><a href="/user/edit-profile">Edit Profile</a></h3>
+          <h3><a href="/user/change-password">Change Password</a></h3>
+</body>
+</html>
