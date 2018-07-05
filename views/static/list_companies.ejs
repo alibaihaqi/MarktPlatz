@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>MarktPlatz</h1>
+    <br><br>
+
+    <ul>
+      <li><a href="/">Home</a> </li>
+      <li> <a href="/users/logout">Log Out</a> </li>
+    </ul>
+
+    <ul>
+      <li><a href="/about_us">About Us</a></li>
+      <li> <a href="/list_companies">List Companies</a> </li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Company Name</th>
+        <th>Category</th>
+        <th>City</th>
+        <th>Province</th>
+      </tr>
+      
+        <% companies.forEach( company => { %>
+        <tr>
+          <td><%= company.name %></td>
+          <td><%= company.category %></td>
+          <td><%= company.city %></td>
+          <td><%= company.province %></td>
+        </tr>
+        <% }) %>
+    </table>
+  </body>
+
+</html>
