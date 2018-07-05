@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const models = require('../models')
+
 const bcrypt = require('bcrypt');
 
 
@@ -110,6 +111,7 @@ routes.post('/change-password/:id', function(request,response){
 
 routes.get('/logout', (request,response) => {
   response.redirect('/users')
+
 })
 
 routes.get('/register', (request, response) => {
@@ -146,9 +148,11 @@ routes.post('/register', (request, response) => {
     })
 })
 
+
 routes.get('/logout', (request, response) => {
   response.redirect('/')
 })
+
 
 
 

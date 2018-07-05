@@ -1,5 +1,6 @@
 const routes = require('express').Router();
 const models = require('../models')
+
 const bcrypt = require('bcrypt');
 
 routes.get('/login', (request, response) => {
@@ -36,6 +37,7 @@ routes.get('/', (request, response, next) => {
 }, (request,response) => {
   response.render('./company/company-home.ejs', {company: request.session.company[0]})
 })
+
 
 routes.get('/', (request, response) => {
   response.render('./company/company-home.ejs')
@@ -105,6 +107,10 @@ routes.post('/change-password/:id', function(response, response){
   } else {
        response.render('change_password_Company.ejs', {message: 'Please insert the right password', company: {oldPass: response.body.oldPass,newPass: response.body.newPass, RTNewPass: response.body.RTNewPass, id: response.session.company[0].id}})
   }
+
+routes.get('/login', (request, response) => {
+  response.render('./company/company-login.ejs')
+
 })
 
 routes.get('/register', (request, response) => {
@@ -112,6 +118,7 @@ routes.get('/register', (request, response) => {
 })
 
 routes.post('/register', (request, response) => {
+
   models.Company.create({
     name : request.body.company_name,
     about_me : request.body.about_me,
@@ -145,4 +152,5 @@ routes.post('/register', (request, response) => {
 routes.get('/logout', (request, response) => {
   response.redirect('/')
 })
+
 module.exports = routes
