@@ -12,11 +12,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         isUnique: function(value, next){
-          Teacher.find({where: {email: value,
-          id: {
-            [Op.ne] : this.id
+          Company.findOne({where: {
+            email: value,
+            id : {
+              [Op.ne] : this.id
+            }
           }
-          }})
+        })
           .then(email => {
             if(email !== null && this.id !== email.id){
               console.log(this.id)

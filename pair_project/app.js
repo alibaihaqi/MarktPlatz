@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 var session = require('express-session')
 var bcrypt = require('bcrypt');
 let userRoute = require('./routes/user.js')
+let companyRoute = require('./routes/company.js')
 
 
 app.set('trust proxy', 1) // trust first proxy
@@ -27,11 +28,16 @@ app.get('/user/login', function(req,res){
     res.render('login_user.ejs',{message: '',  user: {email: '', password: ''}})
 })
 
+app.get('/company/login', function(req,res){
+    res.render('login_company.ejs',{message: '',  company: {email: '', password: ''}})
+})
+
 app.get('/user/logout',function(req,res){
     res.redirect('/')
 })
 
 app.use('/user', userRoute)
+app.use('/company', companyRoute)
 
 
 
