@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Company login</title>
+</head>
+<body style="text-align: center">
+    <h2 style="color: royalblue">Sign In</h2>
+    <h3><%= message %></h3>
+    <form action="/company/login" method="POST">
+        Email:<br>
+        <input type="text" name="email" value="<%= company.email %>">
+        <br>
+        Password:<br>
+        <input type="text" name="password" value="<%= company.password %>">
+        <br><br>
+        <input type="submit" value="Submit">
+      </form> 
+      <br><br>
+      <h4><a href="/company/register">Sign Up</a></h4>
+</body>
+</html>
